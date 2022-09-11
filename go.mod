@@ -3,7 +3,9 @@ module github.com/mfreeman451/bot
 go 1.19
 
 require (
+	github.com/BurntSushi/toml v1.2.0
 	github.com/whyrusleeping/hellabot v0.0.0-20220131094808-3d595078da57
+	github.com/whyrusleeping/hellabot/examples/commands v0.0.0-20220131094808-3d595078da57
 	gopkg.in/inconshreveable/log15.v2 v2.0.0-20200109203555-b30bc20e4fd1
 )
 

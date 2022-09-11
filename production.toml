@@ -1,0 +1,4 @@
+server = "irc.choopa.net:6667"
+nick = "LeBot"
+ssl = false
+channels = ["#testes"]
