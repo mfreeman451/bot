@@ -10,8 +10,8 @@ import (
 	log "gopkg.in/inconshreveable/log15.v2"
 )
 
-var serv = flag.String("server", "irc.theairlock.net:6667", "hostname and port for irc server to connect to")
-var nick = flag.String("nick", "hellabot", "nickname for the bot")
+var serv = flag.String("server", "irc.choopa.net:6667", "hostname and port for irc server to connect to")
+var nick = flag.String("nick", "LeBot", "nickname for the bot")
 
 func main() {
 	flag.Parse()
@@ -20,7 +20,7 @@ func main() {
 		bot.HijackSession = true
 	}
 	channels := func(bot *hbot.Bot) {
-		bot.Channels = []string{"#test"}
+		bot.Channels = []string{"#testes"}
 	}
 	irc, err := hbot.NewBot(*serv, *nick, hijackSession, channels)
 	if err != nil {
@@ -29,6 +29,7 @@ func main() {
 
 	irc.AddTrigger(sayInfoMessage)
 	irc.AddTrigger(longTrigger)
+	irc.AddTrigger(SigPic)
 	irc.Logger.SetHandler(log.StdoutHandler)
 	// logHandler := log.LvlFilterHandler(log.LvlInfo, log.StdoutHandler)
 	// or
